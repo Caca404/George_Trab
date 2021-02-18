@@ -76,6 +76,7 @@ namespace George_Trab.Controllers
             Fabricante f = context.Fabricantes.Find(id);
             context.Fabricantes.Remove(f);
             context.SaveChanges();
+            TempData["Message"] = "Fabricante " + f.Nome.ToUpper() + " foi removido";
             return RedirectToAction("Index");
         }
     }
